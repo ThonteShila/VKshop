@@ -1,4 +1,8 @@
 # VKshop
+
+https://www.youtube.com/watch?v=BakSpjjdjVA&t=1298s
+
+
 Python Django Framework
 Create Project:
 create superuser
