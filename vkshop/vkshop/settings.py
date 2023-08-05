@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'auth_app',
-    'vkshop_app'
+    'vkshop_app',
     ]
 
 MIDDLEWARE = [
