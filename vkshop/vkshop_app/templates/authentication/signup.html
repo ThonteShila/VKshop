@@ -1,1 +1,45 @@
-{<h1>signup</h1>}
+{% extends 'base.html'%}
+{%block title%}SignUp
+{%endblock title%}
+{%block content%}
+<div class="card bg-info p-5">
+  <form action="/auth_app/signup/" method="POST">
+    {% csrf_token %}
+    <div id="signup">
+      
+      <h1 class="text-center text-primary p-2"> SignUp Form</h1>
+
+      <div id="login-row" class="row justify-content-center">
+        <label class="text-primary">{{Passwordmessage}}</label>
+        <label class="text-primary"></label>
+      </div>
+      <div class="container">
+        <div id="login-row" class="row justify-content-center align-items-center">
+          <div id="login-column" class="col-md-6">
+            <div id="login-box" class="col-md-12">
+              <label for="email">Email</label>
+              <div class="form-group">
+                <input type="email" class="form-control p-2" id="email" name="email" requires>
+              </div>
+
+              <label for="password">Password</label>
+              <div class="form-group">
+                <input type="password" class="form-control p-2" id="password" name="password" requires>
+              </div>
+
+              <label for="conformpassword">Conform Password</label>
+              <div class="form-group">
+                <input type="password" class="form-control p-2" id="conformpassword" name="conform_password" requires>
+              </div>
+              <br>
+              <button type="submit" class="btn btn-dark" name="btnRegister" value="">Sign Up</button>
+              <br>
+              Already User? <a href="/re_login" name="relogin">Login</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+{%endblock content%}
