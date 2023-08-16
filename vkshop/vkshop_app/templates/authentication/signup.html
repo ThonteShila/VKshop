@@ -11,7 +11,7 @@
     </button>
   </div>
   {%endfor%}
-  <form action="/auth_app/signup/" method="POST">
+  <form action="/signup/" method="POST">
     {% csrf_token %}
     <div id="signup">
       <h1 class="text-center text-primary p-2"> SignUp Form</h1>
@@ -41,7 +41,7 @@
               <br>
               <button type="submit" class="btn btn-dark" name="btnRegister" value="">Sign Up</button>
               <br>
-              Already User? <a href="/auth_app/login" name="relogin">Login</a>
+              Already User? <a href="/login" name="relogin">Login</a>
             </div>
           </div>
         </div>

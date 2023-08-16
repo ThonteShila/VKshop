@@ -11,7 +11,7 @@
     </button>
   </div>
   {%endfor%}
-  <form action="/auth_app/login/" method="POST">
+  <form action="/login/" method="POST">
     {% csrf_token %}
     <div id="signup">
       <h1 class="text-center text-primary p-2"> Login Form</h1>
@@ -35,7 +35,7 @@
               <br>
               <button type="submit" class="btn btn-dark" name="btnRegister" value="">Login </button>
               <br/>
-              New User? <a href="/auth_app/signup">Signup</a><br/>
+              New User? <a href="/signup">Signup</a><br/>
             </div>
           </div>
         </div>

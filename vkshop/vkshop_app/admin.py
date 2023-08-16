@@ -1,7 +1,7 @@
 from django.contrib import admin
-from .models import Category,ProductImage,Product
+from .models import Owner_details,Product_details
 
-admin.site.register(Category)
-admin.site.register(Product)
-admin.site.register(ProductImage)
+admin.site.register(Owner_details)
+admin.site.register(Product_details)
+
 
