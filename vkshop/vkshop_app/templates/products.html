@@ -1,0 +1,56 @@
+{% extends "base.html"%}
+{%block title%}Products{% endblock title%}
+{% block content %}
+
+<form action="" method="POST">
+    {% csrf_token %}
+    <div class="container">
+        <div class="row">
+            <label class="text-info">{{message}}</label>
+            <div class="col-sm-6">
+                <h3 class="text-info">Products</h3>
+            </div>
+            <div class="col-sm-6">
+                <a type="submit" name="addproduct" href="/add_product/0" value="add product"
+                    class="btn btn-primary text-warning float-right" id="">Add Products</a>
+            </div>
+            <div class="row p-1">
+                <table class="table table-primary table-striped">
+                    <thead>
+                        <tr>
+    
+                            <th scope="col">Product Name</th>
+                            <th scope="col">Slug</th>
+                            <th scope="col">Category Name</th>
+                            <th scope="col">Category Slug</th>
+                            <th scope="col">Category Image</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Product Description</th>
+                            <th scope="col">Product Image</th>
+                            <th scope="col"></th>
+                            <th scope="col"></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for product_detail in product_details %}
+                        <tr>
+                            <td>{{product_detail.product_name}}</td>
+                            <td>{{product_detail.slug}}</td>
+                            <td>{{product_detail.category_name}}</td>
+                            <td>{{product_detail.category_slug}}</td>
+                            <td>{{product_detail.category_image}}</td>
+                            <td>{{product_detail.price}}</td>
+                            <td>{{product_detail.product_description}}</td>
+                            <td>{{product_detail.product_image}}</td>
+                            <td><a class="btn btn-danger" href="/delete_product/{{product_detail.id}}" name="btn_delete">Delete</a></td>
+                            
+                            <td><a class="btn btn-success" href="/add_product/{{product_detail.id}}" name="btn_edit">Edit</a></td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</form>
+    {% endblock content%}

@@ -7,7 +7,7 @@
     <div id="add_product">
         <h1 class="text-center text-primary pt-2">
             <span name="functionality_name" value="{{functionality_name}}">{{functionality_name}}</span><span>
-                Products</span>
+                 Product</span>
         </h1>
         <div id="add_product-row" class="row justify-content-center">
             <label class="text-primary">{{message}}</label>
@@ -18,18 +18,21 @@
                     <div id="add_product-box" class="col-md-12">
                         <label class="text-warning" for="product_name">Product Name </label>
                         <div class="form-group">
-                            <input type="text" class="form-control p-2" value="{{product_details.product_name}}" id="product_name"
+                            <input type="text" class="form-control p-2" 
+                            value="{{product_details.product_name}}" 
+                            id="product_name"
                                 name="product_name" requires>
                         </div>
                         <label class="text-warning" for="slug">Slug</label>
                         <div class="form-group">
-                            <input type="text" class="form-control p-2" value="{{product_details.slug}}" id="slug"
+                            <input type="text" class="form-control p-2" 
+                            value="{{product_details.slug}}" id="slug"
                                 name="slug" requires>
                         </div>
                         <label class="text-warning" for="category_name">Category Name</label>
                         <div class="form-group">
                             <input type="text" class="form-control p-2" 
-                            value="{{product_details.category_name}}" id="slug"
+                            value="{{product_details.category_name}}" id="category_name"
                                 name="category_name" requires>
                         </div>
 
@@ -42,9 +45,10 @@
 
                         <label class="text-warning" for="category_image">Category Image</label>
                         <div class="form-group">
-                            <img src="" class="form-control p-2" 
-                            value="{{product_details.category_image}}" id="category_image"
-                                name="category_image" requires>
+                            <input type="file" id="category_image" value="{{product_details.category_image}}"
+                                            class="fileUpload wave-effect wave-light btn-larger" 
+                                            name="category_image">
+                                     
                         </div>
 
                         <label class="text-warning" for="price">Price</label>
@@ -57,20 +61,19 @@
                         <label class="text-warning" for="product_description">Product Description</label>
                         <div class="form-group">
                             <textarea id="product_description" 
-                            class="materialize-textarea cover_letter"
-                            placeholder="" rel="specialChar:validChar" 
-                            maxlength="4000" value="{{product_details.product_description}}" name="product_description">{{job.cover_letter}}</textarea>
+                            class="materialize-textarea cover_letter" name="product_description" placeholder="" 
+                            rel="specialChar:validChar" maxlength="4000" value="{{product_details.product_description}}" name="product_description">{{job.cover_letter}}</textarea>
                         </div>
 
                         <label class="text-warning" for="product_image">Product Image</label>
                         <div class="form-group">
-                            <img src="" class="form-control p-2" 
-                            value="{{product_details.product_image}}" id="product_image"
-                                name="product_image" requires>
+                            <input type="file" id="product_image" value="{{product_details.product_image}}"
+                                            class="fileUpload wave-effect wave-light btn-larger" 
+                                            name="product_image">
                         </div>
                         <br>
                         <button type="submit" class="btn btn-dark" name="btn_create_list"
-                            href="/add_product/0">{{functionality_name}}Product</button>
+                            href="/add_product">{{functionality_name}}</button>
                         <a class="btn btn-dark" name="btn_cancel" href="/">Cancel</a>
                         &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
                         &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;

@@ -14,7 +14,6 @@ class Owner_details(models.Model):
 
 
 class Product_details(models.Model):
-    owner_details_id=models.ForeignKey(Owner_details,on_delete=models.CASCADE,default=0)
     product_name=models.CharField(max_length=200)
     slug=models.SlugField(unique=True,null=True,blank=True)
     category_name=models.CharField(max_length=200)
