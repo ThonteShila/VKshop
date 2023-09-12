@@ -2,10 +2,44 @@
 {%block title%}Home
 {%endblock title%}
 
-{%block content%}
-<h1>Welcome To O2Real </h1>
-<h2>We have Special Offers!!!</h2>
+{%block content%}\
+<section id="portfolio" class="portfolio">
+    <div class="container">
 
+        <div class="section-title">
+            <h1 class="text-warning">Welcome To O2Real </h1>
+            <h2 class="text-info">We have Special Offers!!!</h2>
+        </div>
+
+        <div class="section-body">
+            <div class="col-lg-12 d-flex justify-content-center">
+                <ul id="portfolio-flters">
+                    <li data-filter=".filter-app">Soap</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section-body">
+            <div class="row portfolio-container">
+                {% for product_detail in product_details %}
+                <div class="col-md-12 portfolio-item filter-app">
+                    {% if product_detail.product_image %}
+                    <img src="static/assets/img/portfolio/{{product_detail.product_image}}" class="img-responsive"
+                        style="width: 90%; float: center; margin-right: 10px;" />
+                    <div class="portfolio-info">
+                        <p class="text-info " style="width: 100%; float: center; margin-right: 20px;">
+                            {{product_detail.product_name}}<br>
+                            {{product_detail.product_description}}<br>
+                            {{product_detail.price}}
+                        </p>
+                    </div>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section><!-- End Portfolio Section -->
 {%endblock content%}
 
 {%block body%}

@@ -16,7 +16,13 @@ def login(request):
 def logout(request):
         return redirect('/')
 def index(request):
-        return render(request,'index.html',{})
+                product_details=Product_details.objects.all()
+                print(product_details)
+                print(product_details)
+                context={
+                        'product_details':product_details,
+                }
+                return render(request,"index.html",context) 
 def aboutus(request):
         return render(request,'aboutus.html',{})
 def contactus(request):
@@ -63,8 +69,7 @@ def add_product(request, product_id):
                         func_name="Create New" 
                 else:
                         product_details=Product_details.objects.get(pk=product_id)  
-                        func_name="Modify"   
-
+                        func_name="Modify"  
                 message=""
                 context={            
                         'functionality_name':func_name,
@@ -90,7 +95,7 @@ def delete_product(request,product_id):
                 print("in Get:", id)
                 message="One Record Removed"
                 print("in message:", message)
-                return redirect("../products")
+                return redirect("../products/")
         return render(request,"products.html",{'message':message})
 
 
